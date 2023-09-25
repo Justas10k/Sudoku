@@ -1,0 +1,87 @@
+body{
+  min-width: 400px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 20px;
+}
+h1{
+  text-align: center;
+}
+#sudoku-board {
+  width: 360px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(9, 40px);
+  grid-template-rows: repeat(9, 40px);
+  border: 2px solid black;
+}
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+}
+
+.cell:nth-child(3n) {
+  border-right: 1px solid black; /* Thinner right border for every third cell */
+}
+
+.cell:nth-child(n+19):nth-child(-n+27) {
+  border-bottom: 1px solid rgb(0, 0, 0); 
+}
+
+.cell:nth-child(n+46):nth-child(-n+54) {
+  border-bottom: 1px solid rgb(0, 0, 0); 
+}
+
+
+.numbers-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 5px;
+}
+
+.draggable {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.draggable:hover {
+  background-color: lightgray;
+}
+
+/* .empty-cell {
+  margin-top: 4px;
+  height: 37.9px;
+  background-color: #f0f0f0;
+} */
+
+#play-again-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#play-again-button:hover {
+  background-color: #45a049; /* Darker Green */
+}
