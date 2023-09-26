@@ -252,56 +252,6 @@ document.body.appendChild(timerContainer);
 
 
 
-/*
-function resetGame() {
-  const sudokuBoard = document.getElementById('sudoku-board');
-  const timerContainer = document.getElementById('timer-container');
-  const completionTimeContainer = document.getElementById('completion-time-container');
-
-  // Reset Sudoku board
-  sudokuBoard.innerHTML = '';
-  const newPartialSudokuBoard = generatePartialSudokuBoard(randomSudokuBoard, 3);
-  displaySudokuBoard(newPartialSudokuBoard, 'sudoku-board');
-
-  // Reset timer and mistakes
-  clearInterval(timerInterval);
-  timerRunning = false;
-  document.getElementById('timer').innerText = 'Time: 00:00:00';
-  startTime = null;
-  mistakes = 0;
-  updateMistakesCounter();
-
-  // Clear completion time
-  completionTimeContainer.innerHTML = '';
-
-  // Reattach event listeners for drag and dragover
-  const draggableNumbers = document.querySelectorAll('.draggable');
-  const emptyCells = document.querySelectorAll('.empty-cell');
-
-  draggableNumbers.forEach(draggable => {
-    draggable.addEventListener('dragstart', drag);
-  });
-
-  emptyCells.forEach(emptyCell => {
-    emptyCell.addEventListener('dragover', allowDrop);
-    emptyCell.addEventListener('drop', drop);
-  });
-}
-
-
-
-// Add a "Play Again" button
-const playAgainButton = document.getElementById('play-again-button');
-playAgainButton.addEventListener('click', resetGame);
-
-*/
-
-
-// Display timer
-
-
-// Event listener to start the timer when interaction begins
-
 
 // console.log('Random Sudoku Board:');
 // console.log(randomSudokuBoard.map(row => row.join(' ')).join('\n'));
