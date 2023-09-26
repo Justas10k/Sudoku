@@ -1,4 +1,4 @@
-let difficulty = 30;  // missing cells from sudoku, the higher num the harder
+let difficulty=30;
 
 function getRandomIndices(length, count) {
   const indices = Array.from({ length }, (_, i) => i);
@@ -97,11 +97,6 @@ document.addEventListener('dragstart', () => {
   startTimer();
 });
 
-
-function checkSudokuValidity(row, col, num) {
-  return randomSudokuBoard[row][col] === num;
-}
-
 function updateMistakesCounter() {
   const mistakesCounter = document.getElementById('mistakes-counter');
   mistakesCounter.innerText = `Mistakes: ${mistakes}`;
@@ -109,11 +104,6 @@ function updateMistakesCounter() {
 
 function checkSudokuValidity(row, col, num) {
   return randomSudokuBoard[row][col] === num;
-}
-
-function updateMistakesCounter() {
-  const mistakesCounter = document.getElementById('mistakes-counter');
-  mistakesCounter.innerText = `Mistakes: ${mistakes}`;
 }
 function allowDrop(event) {
   event.preventDefault();
@@ -121,25 +111,6 @@ function allowDrop(event) {
 
 function drag(event) {
   event.dataTransfer.setData("text", event.target.innerText);
-}
-
-function drop(event) {
-  event.preventDefault();
-  const data = event.dataTransfer.getData("text");
-  const target = event.target;
-
-  if (target.classList.contains('empty-cell')) {
-    const row = parseInt(target.dataset.row);
-    const col = parseInt(target.dataset.col);
-    const num = parseInt(data);
-
-    if (checkSudokuValidity(row, col, num)) {
-      target.innerText = data;
-    } else {
-      mistakes++;
-      updateMistakesCounter();
-    }
-  }
 }
 
 let mistakes = 0;
@@ -214,20 +185,6 @@ function startTimer() {
   }
 }
 
-function updateTimer() {
-  const currentTime = Date.now();
-  const elapsedTime = currentTime - startTime;
-
-  // Calculate hours, minutes, and seconds
-  const hours = Math.floor(elapsedTime / 3600000);  // 1 hour = 3600000 milliseconds
-  const remainingTime = elapsedTime % 3600000; // Remaining time after subtracting hours
-  const minutes = Math.floor(remainingTime / 60000);  // 1 minute = 60000 milliseconds
-  const seconds = Math.floor((remainingTime % 60000) / 1000); // Remaining seconds
-
-  const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-  document.getElementById('timer').innerText = `Time: ${formattedTime}`;
-}
-
 function stopTimer() {
   clearInterval(timerInterval);
 
@@ -292,7 +249,7 @@ timerContainer.id = 'timer-container';
 timerContainer.innerHTML = '<h2 id="timer">Time: 00:00:00</h2>';
 document.body.appendChild(timerContainer);
 
-// Display completion time
+
 
 
 /*
