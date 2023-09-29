@@ -7,12 +7,33 @@
   <link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body>
-  <h1>Random Sudoku Board</h1>
-  <div class="container">
+  <h1>Sudoku</h1>
 
+  <div id="difficulty-buttons">
+    <button class="difficulty-button" data-difficulty="10">Super Easy</button>
+    <button class="difficulty-button" data-difficulty="20">Easy</button>
+    <button class="difficulty-button" data-difficulty="35">Medium</button>
+    <button class="difficulty-button" data-difficulty="50">Hard</button>
+  </div>
+
+
+  <div class="container">
     <div id="sudoku-board" class="sudoku-board"></div>
   </div>
-  
+
+  <!-- winner -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <p>Congratulations! You completed the Sudoku puzzle.</p>
+      <p id="modal-time">Time taken: </p>
+      <p id="modal-mistakes">Mistakes: </p>
+      <p id="modal-difficulty">Difficulty: </p>
+    </div>
+  </div>
+
+
+
   <div class="numbers-container">
     <div class="draggable" draggable="true">1</div>
     <div class="draggable" draggable="true">2</div>
@@ -25,11 +46,11 @@
     <div class="draggable" draggable="true">9</div>
   </div>
   
-  <!-- <div class="container">
-    <div id="buttons-container">
-      <button id="play-again-button">Play Again</button>
-    </div>
-  </div> -->
+  <div class="container">
+    <button id="play-again">Play again</button>
+  </div>
+  
+  <div id="timer_mistake_con"></div>
   <script src="js/javascript.js"></script>
 </body>
 </html>
