@@ -1,4 +1,4 @@
-let difficulty=2;
+let difficulty=3;
 let mistakes = 0;
 let timer_mistake_con= document.getElementById('timer_mistake_con')
 
@@ -260,7 +260,7 @@ function stopTimer() {
     const elapsedTime = (currentTime - startTime) / 1000;
 
     const difficultyNames = {
-      10: 'Super Easy',
+      3: 'Super Easy',
       20: 'Easy',
       35: 'Medium',
       50: 'Hard'
